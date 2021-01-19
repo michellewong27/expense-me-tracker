@@ -1,6 +1,7 @@
 import React from 'react';
 
 class ExpenseListItem extends React.Component{
+  
   render(){
     const {id, name, monthly_income} =this.props.expense;
     const {emergency_fund,investments,retirement} = this.props.expense.monthly_savings;

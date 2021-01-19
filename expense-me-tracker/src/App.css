@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.form-containter{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#expense-form input, label {
+  display: block;
+}
+
+.form-submit {
+  justify-content: center;
+}
