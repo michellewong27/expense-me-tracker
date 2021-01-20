@@ -1,9 +1,8 @@
 import './App.css';
 import React from 'react';
-import data from './data.js';
 import Form from'./Form';
-import ExpenseListItem from './ExpenseListItem';
 import FilterContainer from './FilterContainer';
+import MainContainer from './MainContainer';
 
 class App extends React.Component{
   state = {
@@ -28,11 +27,7 @@ class App extends React.Component{
     }
   }
 
-  renderExpenses=()=>{
-    return data.map(expense => {
-      return <ExpenseListItem key={expense.id} expense={expense}/>
-    })
-  }
+
 
   budgetReview=()=>{
     //render total savings, total expenses & monthly income
@@ -48,7 +43,7 @@ class App extends React.Component{
       <h1>Welcome to your Expense-Me-Tracker</h1>
       <FilterContainer />
       <Form />
-      {this.renderExpenses()}
+      <MainContainer />
     </div>
     );
   }
