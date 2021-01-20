@@ -3,6 +3,7 @@ import React from 'react';
 import data from './data.js';
 import Form from'./Form';
 import ExpenseListItem from './ExpenseListItem';
+import FilterContainer from './FilterContainer';
 
 class App extends React.Component{
   state = {
@@ -45,6 +46,7 @@ class App extends React.Component{
     <div className="App" style={{backgroundColor: this.state.backgroundColor, color:this.state.fontColor}}>
       <button onClick={this.darkMode}>{this.state.darkModeBtn}</button>
       <h1>Welcome to your Expense-Me-Tracker</h1>
+      <FilterContainer />
       <Form />
       {this.renderExpenses()}
     </div>
