@@ -8,7 +8,8 @@ class App extends React.Component{
   state = {
     backgroundColor: 'white',
     fontColor: 'black',
-    darkModeBtn: 'Dark Mode'
+    darkModeBtn: 'Dark Mode',
+     searchTerm: ''
   }
 
   darkMode=()=>{
@@ -36,14 +37,20 @@ class App extends React.Component{
 
   //show the month & previous months in nav bar
 
+  updateSearchTerm=(term)=>{
+    this.setState({
+      searchTerm: term
+    })
+  }
+
   render(){
     return (
     <div className="App" style={{backgroundColor: this.state.backgroundColor, color:this.state.fontColor}}>
       <button onClick={this.darkMode}>{this.state.darkModeBtn}</button>
       <h1>Welcome to your Expense-Me-Tracker</h1>
-      <FilterContainer />
       <Form />
-      <MainContainer />
+      <FilterContainer updateAppSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm}/>
+      <MainContainer searchTerm={this.state.searchTerm}/>
     </div>
     );
   }

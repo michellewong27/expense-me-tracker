@@ -1,19 +1,42 @@
 import React from 'react';
 
 class FilterContainer extends React.Component{
+  state = {
+    searchTerm: ''
+  }
+
+  //keeps track of changes
+  handleChange=(e)=>{
+    let newSearchTerm = e.target.value;
+    this.setState({
+      searchTerm: newSearchTerm
+    })
+  } 
+
+  //once its actually submitted, send up to app so app can send back to down to ExpenseListItems
+  handleSubmit=(e)=>{
+    e.preventDefault();
+    this.props.updateAppSearchTerm(this.state.searchTerm)
+    //clears the form
+    e.target.reset()
+    this.setState({
+      searchTerm: ''
+    })
+  }
+
   render(){
+    console.log(this.state.searchTerm)
     return (
       <div className="filter-options">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label className="filter-label"> Search:
-            <select defaultValue="all">
+            <select defaultValue="all" value={this.state.searchTerm} onChange={this.handleChange}>
               <option value="All">All</option>
               <option value="Savings">Savings</option>
               <option value="Expenses">Expenses</option>
               <option value="Income">Income</option>
             </select>
           </label>
-        </form>
           <label className="filter-label"> Month: 
             <select defaultValue="all">
               <option value="All">All</option>
@@ -39,6 +62,8 @@ class FilterContainer extends React.Component{
               <option value="2021">2021</option>
             </select>
           </label>
+          <button type="submit">Apply Filter</button>
+        </form>
       </div>
     )
   }

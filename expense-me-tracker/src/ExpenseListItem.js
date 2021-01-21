@@ -2,7 +2,8 @@ import React from 'react';
 
 class ExpenseListItem extends React.Component{
   //if filter is set to certain option, only show div name that matches
-  
+    //if im looking at all expenses, or just one category
+
   render(){
     const {id, name, monthly_income} =this.props.expense;
     const {emergency_fund,investments,retirement} = this.props.expense.monthly_savings;

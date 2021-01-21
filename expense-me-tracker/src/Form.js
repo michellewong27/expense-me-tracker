@@ -5,14 +5,14 @@ class Form extends React.Component{
     return (
       <div className="form-containter">
         <form id="expense-form">
-        <div className="form-savings" style={{float:'left','margin-right':"20px"}}>
+        <div className="form-savings" style={{float:'left','marginRight':"20px"}}>
             <h3>Savings</h3>
             <label>Emergency Fund:</label>
             <input type="text" name="Emergency Fund"></input>
             <label>Investments: <input type="text"></input></label>
             <label>Retirement: <input type="text"></input></label>
           </div>
-          <div className="form-expenses" style={{float:'left','margin-right':"20px"}}>
+          <div className="form-expenses" style={{float:'left','marginRight':"20px"}}>
             <h3>Expenses</h3>
             <label>Food: <input type="text"></input></label>
             <label>Clothing: <input type="text"></input></label>
@@ -21,7 +21,7 @@ class Form extends React.Component{
             <label>Transportation: <input type="text"></input></label>
             <label>Personal: <input type="text"></input></label>
           </div>
-          <div className="form-income" style={{float:'left','margin-right':"20px"}}>
+          <div className="form-income" style={{float:'left','marginRight':"20px"}}>
             <h3>Income</h3>
             <label>Income: <input type="text"></input></label>
           </div>
