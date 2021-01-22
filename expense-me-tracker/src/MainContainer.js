@@ -5,18 +5,31 @@ import ExpenseListItem from './ExpenseListItem';
 class MainContainer extends React.Component{
   //update expenses based on filter
     //if filters not on all, set all expenses to false
-  // state ={
-  //   expenses: [],
-  //   allExpenses: true
-  // }
-
-  //**PROPS => this.props.searchTerm */
-  //use this searchTerm that's submitted to show the data that should be on the page
-
+  state ={
+    search: []
+  }
 
   renderExpenses=()=>{
-    return data.map((expense, indx) => {
-      return <ExpenseListItem key={indx} expense={expense}/>
+    let answerObj = [];
+    this.state.search.filter(searchTerm => {
+        if(this.props.searchTerm === "Savings"){
+          answerObj.push(searchTerm.monthly_savings) 
+        } else if (this.props.searchTerm === "Expenses"){
+           answerObj.push(searchTerm.monthly_expenses) 
+          
+        } else if (this.props.searchTerm === "Income"){
+           answerObj.push(searchTerm.monthly_income) 
+        }
+      })
+
+    return answerObj.map((expense, indx) => {
+      return <ExpenseListItem key={indx} expense={expense} searchTerm={this.props.searchTerm}/>
+    })
+  }
+
+  componentDidMount(){
+    this.setState({
+      search: data
     })
   }
 

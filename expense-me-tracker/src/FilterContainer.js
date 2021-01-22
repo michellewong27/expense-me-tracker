@@ -25,12 +25,11 @@ class FilterContainer extends React.Component{
   }
 
   render(){
-    console.log(this.state.searchTerm)
     return (
       <div className="filter-options">
         <form onSubmit={this.handleSubmit}>
           <label className="filter-label"> Search:
-            <select defaultValue="all" value={this.state.searchTerm} onChange={this.handleChange}>
+            <select defaultValue="All" value={this.state.searchTerm} onChange={this.handleChange}>
               <option value="All">All</option>
               <option value="Savings">Savings</option>
               <option value="Expenses">Expenses</option>
@@ -38,7 +37,7 @@ class FilterContainer extends React.Component{
             </select>
           </label>
           <label className="filter-label"> Month: 
-            <select defaultValue="all">
+            <select defaultValue="All">
               <option value="All">All</option>
               <option value="January">January</option>
               <option value="February">February</option>
@@ -55,7 +54,7 @@ class FilterContainer extends React.Component{
             </select>
           </label>
           <label className="filter-label"> Year: 
-            <select defaultValue="all">
+            <select defaultValue="All">
               <option value="All">All</option>
               <option value="2019">2019</option>
               <option value="2020">2020</option>
