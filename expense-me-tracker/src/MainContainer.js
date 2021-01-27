@@ -6,7 +6,8 @@ class MainContainer extends React.Component{
   //update expenses based on filter
     //if filters not on all, set all expenses to false
   state ={
-    search: []
+    search: [],
+    expense: {}
   }
 
   renderExpenses=()=>{
@@ -19,7 +20,10 @@ class MainContainer extends React.Component{
           
         } else if (this.props.searchTerm === "Income"){
            answerObj.push(searchTerm.monthly_income) 
+        } else {
+          answerObj.push(searchTerm)
         }
+        return answerObj;
       })
 
     return answerObj.map((expense, indx) => {

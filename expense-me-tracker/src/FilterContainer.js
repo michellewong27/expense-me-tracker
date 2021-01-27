@@ -2,7 +2,7 @@ import React from 'react';
 
 class FilterContainer extends React.Component{
   state = {
-    searchTerm: ''
+    searchTerm: 'All'
   }
 
   //keeps track of changes
@@ -20,7 +20,7 @@ class FilterContainer extends React.Component{
     //clears the form
     e.target.reset()
     this.setState({
-      searchTerm: ''
+      searchTerm: 'All'
     })
   }
 
@@ -29,7 +29,7 @@ class FilterContainer extends React.Component{
       <div className="filter-options">
         <form onSubmit={this.handleSubmit}>
           <label className="filter-label"> Search:
-            <select defaultValue="All" value={this.state.searchTerm} onChange={this.handleChange}>
+            <select defaultValue="All" onChange={this.handleChange}>
               <option value="All">All</option>
               <option value="Savings">Savings</option>
               <option value="Expenses">Expenses</option>

@@ -11,7 +11,6 @@ class ExpenseListItem extends React.Component{
     const {food, clothing, housing, medical, transportation, personal} = this.props.expense.monthly_expenses;
     return (
         <div className="expense" id={id}>
-          <h1 id={id}>{name}'s Expense Tracker</h1>
           <div className="monthly-savings-containter">
             <h1 id="monthly-savings">Monthly Savings</h1>
             <h2 id="emergency-fund">Emergency Fund: ${emergency_fund}</h2>
